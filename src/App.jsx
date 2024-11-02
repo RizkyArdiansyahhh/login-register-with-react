@@ -1,7 +1,9 @@
+import SignInPage from "./Pages/signinPage";
+
 function App() {
   return (
     <>
-      <h1>Hello world</h1>
+      <SignInPage></SignInPage>
     </>
   );
 }
