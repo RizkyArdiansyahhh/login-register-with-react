@@ -3,6 +3,7 @@ import Image from "../../assets/bg.jpg";
 import Google from "../../assets/google.png";
 import Facebook from "../../assets/facebook.png";
 import Media from "../Elements/Media";
+import { Link } from "react-router-dom";
 const AuthLayout = (props) => {
   const { children, type } = props;
   return (
@@ -16,7 +17,7 @@ const AuthLayout = (props) => {
           <h1 className="text-sky-600 font-bold text-3xl mb-5">{type}</h1>
           {children}
 
-          <Navigation></Navigation>
+          <Navigation type={type}></Navigation>
         </div>
       </div>
     </div>
@@ -37,9 +38,12 @@ const Navigation = ({ type }) => {
       <div className="text-center">
         <p className="font-bold">
           {text}{" "}
-          <a className="font-bold text-sky-600" htmlFor="">
+          <Link
+            className="font-bold text-sky-600"
+            to={type === "signup" ? "/signin" : "/signup"}
+          >
             {link}
-          </a>
+          </Link>
         </p>
       </div>
     </div>
